@@ -45,7 +45,7 @@ window.renderStatistics = function (ctx, players, times) {
     times[i] = Math.round(times[i]);
     ctx.fillText(times[i], CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - FONT_GAP - 16 - GAP - ((barHeight * times[i]) / maxTime) - GAP);
     ctx.fillText(players[i], CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - FONT_GAP);
-    ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
+    ctx.fillStyle = 'hsl(240, ' + Math.random() * (100 - 0) + 0 + '%, 50%)';
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     }
