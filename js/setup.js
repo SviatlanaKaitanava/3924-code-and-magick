@@ -10,9 +10,9 @@ var fragment = document.createDocumentFragment();
 
 var random = function (max, min) {
   return Math.floor(Math.random() * (max - min) + min);
-}
+};
 
-var generateWizards = function(wizardNum) {
+var generateWizards = function (wizardNum) {
   var wizards = [];
   for (var i = 0; i < wizardNum; i++) {
     wizards[i] = {
@@ -23,7 +23,7 @@ var generateWizards = function(wizardNum) {
   }
 
   return wizards;
-}
+};
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -33,14 +33,14 @@ var renderWizard = function (wizard) {
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
 
   return wizardElement;
-}
+};
 
-var init = function() {
+var init = function () {
   document.querySelector('.setup').classList.remove('hidden');
   document.querySelector('.setup-similar').classList.remove('hidden');
-}
+};
 
-var renderAll = function() {
+var renderAll = function () {
   var wizards = generateWizards(4);
 
   for (var i = 0; i < wizards.length; i++) {
@@ -48,7 +48,7 @@ var renderAll = function() {
   }
   similarListElement.appendChild(fragment);
 
-}
+};
 
 init();
 renderAll();
