@@ -116,11 +116,11 @@ wizardCoat.addEventListener('click', function () {
 var wizardEyes = document.querySelector('.wizard-eyes');
 wizardEyes.addEventListener('click', function () {
   wizardEyes.style.fill = EYES_COLORS[random(4, 0)];
-  document.getElementsByName('eyes-color') =  wizardEyes.style.fill;
+  document.getElementsByName('eyes-color').value =  wizardEyes.style.fill;
 });
 
 var setupFireballWrap = document.querySelector('.setup-fireball-wrap');
 setupFireballWrap.addEventListener('click', function () {
   setupFireballWrap.style.background = FIREBALL_COLOR[random(4, 0)];
-  document.getElementsByName('fireball-color') = setupFireballWrap.style.background;
+  document.getElementsByName('fireball-color').value = setupFireballWrap.style.background;
 });
