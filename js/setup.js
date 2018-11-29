@@ -41,10 +41,10 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-var init = function () {
-  document.querySelector('.setup').classList.remove('hidden');
-  document.querySelector('.setup-similar').classList.remove('hidden');
-};
+//var init = function () {
+//  document.querySelector('.setup').classList.remove('hidden');
+//  document.querySelector('.setup-similar').classList.remove('hidden');
+//};
 
 var renderAll = function () {
   var wizards = generateWizards(4);
@@ -57,20 +57,21 @@ var renderAll = function () {
 };
 
 //init();
+
 renderAll();
 
-var onPopupEscPress = function(evt) {
+var onPopupEscPress = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
     closePopup();
   }
 };
 
-var openPopup = function() {
+var openPopup = function () {
   setup.classList.remove('hidden');
   document.addEventListener('keydown', onPopupEscPress);
 };
 
-var closePopup = function(evt) {
+var closePopup = function (evt) {
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEscPress);
 };
@@ -89,14 +90,14 @@ setupOpen.addEventListener('keydown', function (evt) {
   }
 });
 
-setupClose.addEventListener('keydown', function(evt) {
+setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
   }
 });
 
-setupUserName.addEventListener('invalid', function (evt) {
-   if (setupUserName.validity.tooShort) {
+setupUserName.addEventListener('invalid', function () {
+  if (setupUserName.validity.tooShort) {
     setupUserName.setCustomValidity('Имя должно состоять минимум из 2-х символов');
   } else if (setupUserName.validity.tooLong) {
     setupUserName.setCustomValidity('Имя не должно превышать 25-ти символов');
@@ -116,7 +117,7 @@ wizardCoat.addEventListener('click', function () {
 var wizardEyes = document.querySelector('.wizard-eyes');
 wizardEyes.addEventListener('click', function () {
   wizardEyes.style.fill = EYES_COLORS[random(4, 0)];
-  document.getElementsByName('eyes-color').value =  wizardEyes.style.fill;
+  document.getElementsByName('eyes-color').value = wizardEyes.style.fill;
 });
 
 var setupFireballWrap = document.querySelector('.setup-fireball-wrap');
