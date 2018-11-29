@@ -41,11 +41,6 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-//var init = function () {
-//  document.querySelector('.setup').classList.remove('hidden');
-//  document.querySelector('.setup-similar').classList.remove('hidden');
-//};
-
 var renderAll = function () {
   var wizards = generateWizards(4);
 
@@ -55,8 +50,6 @@ var renderAll = function () {
   similarListElement.appendChild(fragment);
 
 };
-
-//init();
 
 renderAll();
 
@@ -71,7 +64,7 @@ var openPopup = function () {
   document.addEventListener('keydown', onPopupEscPress);
 };
 
-var closePopup = function (evt) {
+var closePopup = function () {
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEscPress);
 };
