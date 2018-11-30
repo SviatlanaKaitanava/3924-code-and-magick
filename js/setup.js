@@ -69,18 +69,18 @@ var openPopup = function () {
   document.addEventListener('keydown', onPopupEscPress);
 };
 
-setupUserName.addEventListener("focus", function () {
+setupUserName.addEventListener('focus', function () {
   onFocus = true;
 });
-setupUserName.addEventListener("blur", function () {
+setupUserName.addEventListener('blur', function () {
   onFocus = false;
 });
 
 var closePopup = function () {
-    if (onFocus === false) {
-      setup.classList.add('hidden');
+  if (onFocus === false) {
+    setup.classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
-    }
+  }
 };
 
 setupOpen.addEventListener('click', function () {
