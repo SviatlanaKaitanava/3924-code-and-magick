@@ -67,7 +67,7 @@ var onPopupEscPress = function (evt) {
 var openPopup = function () {
   setup.classList.remove('hidden');
   document.addEventListener('keydown', onPopupEscPress);
-  setup.style = ''
+  setup.style = '';
 };
 
 setupUserName.addEventListener('focus', function () {
