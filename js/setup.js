@@ -6,8 +6,6 @@
   var setupUserName = setup.querySelector('.setup-user-name');
   var onFocus = false;
 
-  window.similarWizards();
-
   var onPopupEscPress = function (evt) {
     window.util.isEscEvent(evt, closePopup);
   };
@@ -58,5 +56,19 @@
     } else {
       setupUserName.setCustomValidity('');
     }
+  });
+
+  var onLoad = function () {
+    setup.classList.add('hidden');
+  };
+
+  var onError = function (errorMessage) {
+    window.util.showError(errorMessage);
+  };
+
+  var form = setup.querySelector('.setup-wizard-form');
+  form.addEventListener('submit', function (evt) {
+    window.backend.save(new FormData(form), onLoad, onError);
+    evt.preventDefault();
   });
 })();
